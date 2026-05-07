@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+.env*
+!.env.example
+*.log
+.DS_Store
+.vscode
+.idea
+.claude
+nutrivision_bot
+ozon-position-bot
+__pycache__
+*.pyc
+*.db
+tsconfig.tsbuildinfo
