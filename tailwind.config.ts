@@ -11,6 +11,11 @@ const config: Config = {
         ink: { DEFAULT: "#1C1B1A", soft: "#3A3937", muted: "#6B6864", subtle: "#9B968F" },
         champagne: { 300: "#E8D6B0", 400: "#D4BC8B", 500: "#B89968", 600: "#947647" },
         steel: { 300: "#CFCFCF", 400: "#A6A6A6", 500: "#7E7E7E" },
+        green: {
+          50: "#f0faf0", 100: "#dcf0dc", 200: "#b9e0b9", 300: "#8ccc8c",
+          400: "#5cb85c", 500: "#3a9a3a", 600: "#2d7d2d", 700: "#246224",
+          800: "#1b4a1b", 900: "#123312",
+        },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],

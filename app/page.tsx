@@ -1,27 +1,23 @@
-import { Hero } from "@/components/sections/Hero";
-import { BrandIntro } from "@/components/sections/BrandIntro";
-import { Categories } from "@/components/sections/Categories";
-import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
-import { QuizTeaser } from "@/components/sections/QuizTeaser";
-import { WhyArseva } from "@/components/sections/WhyArseva";
-import { Reviews } from "@/components/sections/Reviews";
-import { WarrantyBlock } from "@/components/sections/WarrantyBlock";
-import { OzonSellerCTA } from "@/components/sections/OzonSellerCTA";
-import { B2BBlock } from "@/components/sections/B2BBlock";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { PriceTable } from "@/components/sections/PriceTable";
+import { Calculator } from "@/components/sections/Calculator";
+import { Advantages } from "@/components/sections/Advantages";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { DeliverySection } from "@/components/sections/DeliverySection";
+import { ArticlesSection } from "@/components/sections/ArticlesSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <BrandIntro />
-      <Categories />
-      <FeaturedProducts />
-      <QuizTeaser />
-      <WhyArseva />
-      <Reviews />
-      <WarrantyBlock />
-      <OzonSellerCTA />
-      <B2BBlock />
+      <HeroSection />
+      <PriceTable />
+      <Calculator />
+      <Advantages />
+      <AboutSection />
+      <DeliverySection />
+      <ArticlesSection />
+      <ContactSection />
     </>
   );
 }

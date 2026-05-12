@@ -1,107 +1,66 @@
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
-import { OZON_URL, OZON_SELLER_URL } from "@/data/nav";
-
-const cols = [
-  {
-    title: "Каталог",
-    links: [
-      { label: "Все товары", href: "/catalog" },
-      { label: "Подбор массажера", href: "/quiz" },
-      { label: "Перкуссионные", href: "/catalog?cat=percussion" },
-      { label: "Для ног", href: "/catalog?cat=foot" },
-      { label: "Для шеи и плеч", href: "/catalog?cat=neck" },
-      { label: "Для глаз", href: "/catalog?cat=eye" },
-    ],
-  },
-  {
-    title: "Бренд",
-    links: [
-      { label: "О бренде", href: "/about" },
-      { label: "Гарантия", href: "/warranty" },
-      { label: "B2B", href: "/b2b" },
-      { label: "Контакты", href: "/contacts" },
-      { label: "FAQ", href: "/faq" },
-    ],
-  },
-  {
-    title: "Купить",
-    links: [
-      { label: "Купить на Ozon", href: OZON_URL, external: true },
-      { label: "Продавец ARSEVA на Ozon", href: OZON_SELLER_URL, external: true },
-      { label: "Задать вопрос продавцу", href: OZON_SELLER_URL, external: true },
-    ],
-  },
-  {
-    title: "Юридическое",
-    links: [
-      { label: "Политика конфиденциальности", href: "/legal/privacy" },
-      { label: "Пользовательское соглашение", href: "/legal/terms" },
-    ],
-  },
-];
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { footerNav, PHONE1, PHONE2, PHONE1_HREF, PHONE2_HREF, EMAIL, ADDRESS, HOURS } from "@/data/nav";
 
 export function Footer() {
   return (
-    <footer className="bg-graphite-950 text-bone-100 pt-24 pb-10">
-      <Container>
-        <div className="grid gap-14 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <div className="font-display text-[28px] tracking-[0.2em] font-semibold">ARSEVA</div>
-            <p className="mt-5 text-sm text-bone-100/60 max-w-xs">
-              Техника для восстановления, массажа и ухода за телом. Создана для регулярного
-              домашнего ритуала и поддержки после нагрузки.
+    <footer className="bg-gray-900 text-white pt-14 pb-8">
+      <div className="container mx-auto">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-10 h-10 bg-green-600 rounded flex items-center justify-center text-white font-bold text-xl">Б</div>
+              <div>
+                <div className="font-extrabold text-white tracking-wide">БЕТОН-ЗАВОД</div>
+                <div className="text-[11px] text-gray-400">сеть бетонных заводов</div>
+              </div>
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed mb-5">
+              Продажа бетона и строительных материалов в Екатеринбурге и Свердловской области.
+              Собственный автопарк, лабораторный контроль качества.
             </p>
-            <div className="mt-8 flex flex-col gap-3">
-              <a
-                href={OZON_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#005BFF] hover:bg-[#0050E0] transition px-5 py-2.5 text-sm font-medium text-white w-fit"
-              >
-                Купить на Ozon
+            <div className="flex flex-col gap-2.5 text-sm">
+              <a href={PHONE1_HREF} className="flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold transition">
+                <Phone size={14} />{PHONE1}
               </a>
-              <a
-                href={OZON_SELLER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 transition px-5 py-2.5 text-sm font-medium text-bone-100 w-fit"
-              >
-                Задать вопрос продавцу
+              <a href={PHONE2_HREF} className="flex items-center gap-2 text-gray-300 hover:text-white transition">
+                <Phone size={14} />{PHONE2}
               </a>
+              <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-gray-400 hover:text-white transition">
+                <Mail size={14} />{EMAIL}
+              </a>
+              <span className="flex items-center gap-2 text-gray-400">
+                <MapPin size={14} className="shrink-0" />{ADDRESS}
+              </span>
+              <span className="flex items-center gap-2 text-gray-400">
+                <Clock size={14} />{HOURS}
+              </span>
             </div>
           </div>
-          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {cols.map((c) => (
-              <div key={c.title}>
-                <div className="text-[11px] uppercase tracking-[0.22em] text-bone-100/40">{c.title}</div>
-                <ul className="mt-5 space-y-3 text-sm">
-                  {c.links.map((l) => (
-                    <li key={l.label}>
-                      {(l as any).external ? (
-                        <a href={l.href} target="_blank" rel="noopener noreferrer" className="hover:text-champagne-300 transition">
-                          {l.label}
-                        </a>
-                      ) : (
-                        <Link href={l.href} className="hover:text-champagne-300 transition">
-                          {l.label}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+
+          {/* Nav columns */}
+          {footerNav.map((col) => (
+            <div key={col.title}>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">{col.title}</h4>
+              <ul className="flex flex-col gap-2.5">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link href={l.href} className="text-sm text-gray-400 hover:text-white transition">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-bone-100/40">
-          <p>© {new Date().getFullYear()} ARSEVA. Все права защищены.</p>
-          <p>
-            Информация на сайте носит справочный характер. Товары не являются медицинскими изделиями. При наличии заболеваний проконсультируйтесь со специалистом.
-          </p>
+        <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between gap-3 text-xs text-gray-600">
+          <p>© {new Date().getFullYear()} БЕТОН-ЗАВОД. Все права защищены.</p>
+          <p>Содержание сайта не является публичной офертой.</p>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }
