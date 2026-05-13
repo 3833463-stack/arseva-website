@@ -1,0 +1,34 @@
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[[plugins]]
+origin = "config"
+package = "@netlify/plugin-nextjs"
+
+[plugins.inputs]
+
+[build]
+publish = "C:\\Users\\Павел\\Desktop\\Сайт\\ARSEVA\\.claude\\worktrees\\modest-kirch-30dbd2\\.next"
+publishOrigin = "config"
+commandOrigin = "config"
+base = "C:\\Users\\Павел\\Desktop\\Сайт\\ARSEVA\\.claude\\worktrees\\modest-kirch-30dbd2"
+command = "npm run build"
+
+[build.environment]
+NODE_VERSION = "20"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]

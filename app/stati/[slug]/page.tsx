@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronRight, Clock, Calendar, ArrowLeft } from "lucide-react";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { articles } from "@/app/stati/page";
+import { articles } from "@/data/articles";
 
 const articleContent: Record<string, React.ReactNode> = {
   "oblast-primeneniya-betona": (
